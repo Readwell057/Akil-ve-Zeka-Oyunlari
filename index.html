@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="tr" data-theme="mor"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Akıl Zeka Sınıfı</title>
+<style>
+:root{--on:#fff;--gold:#f5b301;--g:#22c55e;--r:#f43f5e}
+[data-theme=mor]{--bg:#120f1f;--c:#1c1830;--c2:#2a2449;--t:#f3f0ff;--m:#9b94c4;--p:#8b5cf6;--p2:#d946ef}
+[data-theme=okyanus]{--bg:#eaf3fc;--c:#fff;--c2:#dcebf8;--t:#0f2740;--m:#5f7f9c;--p:#0ea5e9;--p2:#2563eb}
+[data-theme=orman]{--bg:#e9f5ec;--c:#fff;--c2:#d8eddd;--t:#12281a;--m:#648a70;--p:#16a34a;--p2:#0d9488}
+[data-theme=gunbatimi]{--bg:#fff2e8;--c:#fff;--c2:#ffe3cf;--t:#341808;--m:#9a7560;--p:#f97316;--p2:#e11d48}
+[data-theme=altin]{--bg:#0a0a0c;--c:#16161a;--c2:#25252b;--t:#f6f0e0;--m:#a39a82;--p:#d4a017;--p2:#f7d774;--on:#1a1300}
+[data-theme=gul]{--bg:#fdeff6;--c:#fff;--c2:#fadcec;--t:#3a1226;--m:#a2647f;--p:#ec4899;--p2:#a855f7}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--t);padding-bottom:40px}
+header{background:linear-gradient(135deg,var(--p),var(--p2));color:var(--on);padding:calc(16px + max(env(safe-area-inset-top),24px)) 18px 18px;border-radius:0 0 26px 26px}
+header b{font-size:21px;letter-spacing:.3px}header small{display:block;opacity:.85;color:var(--on)}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:10px;background:var(--bg);scrollbar-width:none}
+nav button{flex:0 0 auto;background:var(--c);color:var(--m);border-radius:20px;padding:8px 14px;font-size:13px;box-shadow:none}
+nav button.on{background:linear-gradient(135deg,var(--p),var(--p2));color:var(--on);font-weight:700}
+main{padding:4px 12px;max-width:780px;margin:auto}
+.card{background:var(--c);border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:0 4px 16px #0002}
+h3{margin:0 0 10px;font-size:17px}h4{margin:14px 0 6px}
+button{background:linear-gradient(135deg,var(--p),var(--p2));color:var(--on);border:0;border-radius:12px;padding:11px 14px;font-size:15px;font-weight:600}
+button.ghost{background:var(--c2);color:var(--t)}button.d{background:var(--r);color:#fff}button.g{background:var(--g);color:#fff}button.sm{padding:7px 11px;font-size:14px}
+input,textarea{width:100%;padding:12px;border-radius:12px;border:2px solid var(--c2);background:var(--bg);color:var(--t);font-size:16px;margin:4px 0;font-family:inherit}
+input:focus,textarea:focus{outline:0;border-color:var(--p)}
+.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.row>.f0{flex:0 0 auto}.wrap{flex-wrap:wrap}
+small,.mu{color:var(--m)}
+.av{border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;flex:0 0 auto}
+.li{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--c);border-radius:16px;margin-bottom:8px;box-shadow:0 2px 8px #0002}
+.li .nm{flex:1;min-width:0;font-weight:600}.badge{background:var(--c2);border-radius:10px;padding:3px 9px;font-size:13px;font-weight:700;color:var(--p)}
+.hero{background:linear-gradient(135deg,var(--p),var(--p2));color:var(--on);border-radius:22px;padding:16px;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}.stats div{background:var(--c2);border-radius:14px;padding:10px 2px;font-size:12px;color:var(--m)}.stats b{display:block;font-size:20px;color:var(--t)}
+.hero .stats{grid-template-columns:repeat(3,1fr)}.hero .stats div{background:#fff3;color:var(--on)}.hero .stats b{color:var(--on)}
+.pod{display:flex;align-items:flex-end;gap:8px;text-align:center}.pod>div{flex:1}.pod .st{border-radius:14px 14px 0 0;background:var(--c2);display:flex;align-items:flex-start;justify-content:center;padding-top:6px;font-size:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:flex;align-items:center;gap:6px;padding:5px 12px 5px 5px;border-radius:20px;background:var(--c2);color:var(--t);font-size:14px;border:2px solid transparent}.chip.on{border-color:var(--p);background:var(--bg)}
+.bracket{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}.col{flex:0 0 78%;max-width:280px}.col>b{display:block;text-align:center;margin-bottom:8px;color:var(--p);letter-spacing:.5px;text-transform:uppercase;font-size:13px}
+.mt{background:var(--c);border-radius:16px;margin-bottom:10px;overflow:hidden;box-shadow:0 3px 10px #0003}
+.pl{display:flex;align-items:center;gap:10px;width:100%;border-radius:0;background:none;color:var(--t);text-align:left;padding:10px 12px;font-weight:600}.pl+.pl{border-top:1px solid var(--c2)}
+.pl.w{background:linear-gradient(90deg,var(--g),#16a34a);color:#fff}.pl.l{opacity:.4}.vs{height:0}
+.champ{background:linear-gradient(135deg,#f59e0b,#fde047);color:#3a2400;text-align:center;border-radius:22px;padding:20px;margin-bottom:12px;animation:pl 2s infinite}@keyframes pl{50%{transform:scale(1.02)}}
+.ov{position:fixed;inset:0;background:#000a;z-index:20;display:flex;align-items:flex-end}.sheet{background:var(--bg);width:100%;max-height:88vh;overflow:auto;border-radius:26px 26px 0 0;padding:18px;max-width:780px;margin:auto}
+.cup{display:flex;justify-content:space-between;gap:8px;background:var(--c2);border-radius:12px;padding:9px 12px;margin-bottom:6px}
+.th{display:grid;grid-template-columns:1fr 1fr;gap:10px}.th button{height:64px;color:#fff;border:3px solid transparent}.th button.on{border-color:var(--t)}
+.bar{height:8px;background:var(--c2);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--p2))}
+</style></head><body><header><b>🧠 Akıl Zeka Sınıfı</b><small id=hs></small></header><nav id=n></nav><main id=m></main><div id=ov></div>
+<script>
+const K='akilzeka_v1';let S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+S=S||{};S.st=S.st||[];S.att=S.att||{};S.notes=S.notes||[];S.hist=S.hist||[];S.theme=S.theme||'mor';S.st.forEach(s=>{s.w=s.w||[];s.k=s.k||[]});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}},today=()=>new Date().toISOString().slice(0,10);
+const fd=d=>d?d.split('-').reverse().join('.'):'';
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const gs=id=>S.st.find(x=>x.id==id),nm=id=>{const s=gs(id);return s?esc(s.n):'—'};
+const av=(id,z=40)=>{const s=gs(id);if(!s)return'';let h=0;for(const c of s.n)h=(h*31+c.charCodeAt(0))%360;return `<span class=av style="width:${z}px;height:${z}px;font-size:${z*.4}px;background:hsl(${h},60%,48%)">${esc(s.n.trim().split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase())}</span>`};
+let T='pan',D=today(),R='',P=null,TNAME='',TDATE=today(),AW=true,SEL=null;
+const TABS=[['pan','🏠','Panel'],['ogr','👥','Öğrenciler'],['yok','✅','Yoklama'],['tur','🏆','Turnuva'],['pua','⭐','Puan'],['not','📝','Notlar'],['arc','🧰','Araçlar'],['ayr','⚙️','Ayarlar']];
+const go=t=>{T=t;R='';P=null;scrollTo(0,0);draw()};
+const THEMES=[['mor','Mor Gece','#8b5cf6'],['okyanus','Okyanus','#0ea5e9'],['orman','Orman','#16a34a'],['gunbatimi','Gün Batımı','#f97316'],['altin','Siyah Altın','#d4a017'],['gul','Gül','#ec4899']];
+function draw(){document.documentElement.dataset.theme=S.theme;hs.textContent=new Date().toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long'});
+n.innerHTML=TABS.map(t=>`<button class="${T==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');m.innerHTML=V[T]();ov.innerHTML=P?prof():''}
+const pool=()=>{const a=S.att[D],p=a?S.st.filter(s=>a[s.id]===1):[];return p.length?p:S.st};
+const att=id=>{const A=Object.values(S.att);return[A.filter(x=>x[id]===1).length,A.filter(x=>x[id]===0).length]};
+const rank=()=>[...S.st].sort((a,b)=>b.p-a.p||b.a-a.a);
+const empty=t=>`<div class="card mu" style="text-align:center;padding:30px">${t}</div>`;
+const V={};
+V.pan=()=>{const a=S.att[D]||{},c=S.st.filter(s=>a[s.id]===1).length,r=rank().slice(0,3),pc=S.st.length?Math.round(c/S.st.length*100):0;
+return `<div class=hero><div class=stats><div><b>${S.st.length}</b>öğrenci</div><div><b>${c}/${S.st.length}</b>bugün gelen</div><div><b>${S.hist.length}</b>turnuva</div></div><div class=bar style="margin-top:12px;background:#fff4"><i style="width:${pc}%;background:#fff"></i></div></div>
+<div class="row wrap" style="margin-bottom:12px"><button onclick="go('yok')">✅ Yoklama al</button><button onclick="go('tur')">🏆 Turnuva</button></div>`+
+(r.length&&r[0].p>0?`<div class=card><h3>🏅 Liderlik</h3><div class=pod>${[1,0,2].filter(i=>r[i]).map(i=>`<div onclick="P='${r[i].id}';draw()">${av(r[i].id,i?46:58)}<div style="font-weight:700;margin:4px 0">${esc(r[i].n)}</div><div class=st style="height:${[90,60,45][i]}px">${['🥇','🥈','🥉'][i]}</div><small>${r[i].p} puan</small></div>`).join('')}</div></div>`:'')+
+(S.hist.length?`<div class=card><h3>🏆 Son şampiyon</h3><div class=li style="box-shadow:none;background:var(--c2)">${av(S.hist[0].ch)}<div class=nm>${nm(S.hist[0].ch)}<br><small>${esc(S.hist[0].n)} · ${fd(S.hist[0].d)}</small></div></div></div>`:'')+(S.st.length?'':empty('Başlamak için <b>Öğrenciler</b> sekmesinden isimleri ekleyin.'))};
+V.ogr=()=>`<div class=card><h3>Öğrenci ekle</h3><textarea id=nn rows=3 placeholder="Her satıra bir isim yazın"></textarea><button onclick="addSt()" style="width:100%">＋ Ekle</button></div>`+S.st.map(s=>{const[p,a]=att(s.id);return `<div class=li onclick="P='${s.id}';draw()">${av(s.id,46)}<div class=nm>${esc(s.n)}<br><small>${p} katıldı · ${a} devamsız${s.w.length?' · 🏆'+s.w.length:''}</small></div><span class=badge>${s.p} p</span></div>`}).join('');
+function addSt(){nn.value.split('\n').map(x=>x.trim()).filter(Boolean).forEach(x=>S.st.push({id:uid(),n:x,p:0,a:0,k:[],w:[]}));save();draw()}
+function prof(){const s=gs(P);if(!s)return'';const[p,a]=att(P),r=rank().findIndex(x=>x.id==P)+1;
+return `<div class=ov onclick="if(event.target==this){P=null;draw()}"><div class=sheet><div class="row" style="margin-bottom:12px">${av(P,64)}<div><div style="font-size:22px;font-weight:800">${esc(s.n)}</div><small>${r}. sırada</small></div><button class="ghost sm f0" onclick="P=null;draw()">✕</button></div>
+<div class=stats><div><b>${s.p}</b>puan</div><div><b>${s.a}</b>artı</div><div><b>${p}</b>katıldı</div><div><b>${a}</b>devamsız</div></div>
+<div class=row style="margin-top:10px"><button class=ghost onclick="pp('${P}',-1)">−1</button><button onclick="pp('${P}',1)">+1</button><button onclick="pp('${P}',5)">+5</button><button class=g onclick="pa('${P}')">➕ Artı</button></div>
+<h4>🏆 Kazandığı turnuvalar</h4>${s.w.length?s.w.map(w=>`<div class=cup><b>🏆 ${esc(w.t)}</b><small>${fd(w.d)}</small></div>`).join(''):'<small>Henüz turnuva kazanmadı.</small>'}
+<h4>📝 Notlar</h4>${s.k.map((k,j)=>`<div class=cup onclick="dk('${P}',${j})"><span>${esc(k.t)}</span><small>${fd(k.d)}</small></div>`).join('')}<button class=ghost style="width:100%" onclick="pk('${P}')">＋ Not ekle</button>
+<div class=row style="margin-top:14px"><button class=ghost onclick="ren('${P}')">✏️ Adı değiştir</button><button class=d onclick="del('${P}')">🗑 Sil</button></div></div></div>`}
+function ren(id){const s=gs(id),v=prompt('Yeni isim',s.n);if(v&&v.trim()){s.n=v.trim();save();draw()}}
+function del(id){if(confirm('Öğrenci silinsin mi?')){S.st=S.st.filter(s=>s.id!=id);P=null;save();draw()}}
+V.yok=()=>{const a=S.att[D]||{},c=S.st.filter(s=>a[s.id]===1).length;
+return `<div class=card><input type=date value="${D}" onchange="D=this.value;draw()"><div class=row><b>${c} / ${S.st.length} geldi</b><button class="g sm f0" onclick="allAtt(1)">Hepsi geldi</button><button class="ghost sm f0" onclick="allAtt(0)">Temizle</button></div><div class=bar style="margin-top:8px"><i style="width:${S.st.length?c/S.st.length*100:0}%"></i></div></div>`+(S.st.length?'':empty('Önce öğrenci ekleyin.'))+S.st.map(s=>{const v=a[s.id];return `<div class=li>${av(s.id)}<div class=nm>${esc(s.n)}<br><small>devamsızlık: ${att(s.id)[1]}</small></div><button class="${v===1?'g':'ghost'} sm f0" onclick="mark('${s.id}',1)">Var</button><button class="${v===0?'d':'ghost'} sm f0" onclick="mark('${s.id}',0)">Yok</button></div>`}).join('')};
+const mark=(id,v)=>{(S.att[D]=S.att[D]||{})[id]=v;save();draw()};
+const allAtt=v=>{if(!v)delete S.att[D];else{S.att[D]={};S.st.forEach(s=>S.att[D][s.id]=1)}save();draw()};
+const rn=(r,x)=>x==1?'🏆 Final':x==2?'Yarı Final':x==4?'Çeyrek Final':(r+1)+'. Tur';
+V.tur=()=>{const t=S.tn;let h='';
+if(!t){if(!SEL)SEL=pool().map(s=>s.id);
+h+=`<div class=card><h3>🏆 Yeni turnuva</h3><input placeholder="Turnuva adı (örn. Mangala Şampiyonası)" value="${esc(TNAME)}" oninput="TNAME=this.value"><input type=date value="${TDATE}" onchange="TDATE=this.value"><h4>Katılımcılar <small>(${SEL.length} kişi)</small></h4><div class="row wrap" style="margin-bottom:8px"><button class="ghost sm f0" onclick="SEL=S.st.map(s=>s.id);draw()">Hepsi</button><button class="ghost sm f0" onclick="SEL=[];draw()">Hiçbiri</button></div><div class=chips>`+S.st.map(s=>`<button class="chip ${SEL.includes(s.id)?'on':''}" onclick="tg('${s.id}')">${av(s.id,28)}${esc(s.n)}</button>`).join('')+`</div><label style="display:block;margin:12px 0"><input type=checkbox style="width:auto" ${AW?'checked':''} onchange="AW=this.checked"> Kazanana +1, şampiyona +5 puan ver</label><button style="width:100%" onclick="startT()">🎲 Kura çek ve başlat</button></div>`}
+else{h+=`<div class=hero><b style="font-size:19px">${esc(t.nm)}</b><br><small style="color:var(--on)">${fd(t.d)} · ${t.r[0].reduce((q,x)=>q+(x.b?2:1),0)} katılımcı</small></div>`;
+if(t.ch)h+=`<div class=champ><div style="font-size:46px">🏆</div><b style="letter-spacing:2px">ŞAMPİYON</b><div style="font-size:26px;font-weight:800;margin:6px 0">${nm(t.ch)}</div>${esc(t.nm)} · ${fd(t.d)}</div>`;
+h+=`<div class=bracket>`+t.r.map((r,ri)=>`<div class=col><b>${rn(ri,r.length)}</b>`+r.map((x,mi)=>x.auto?`<div class=mt><div class=pl>${av(x.a,30)}<span style="flex:1">${nm(x.a)}</span><small>bay</small></div></div>`:`<div class=mt>`+[x.a,x.b].map(id=>`<button class="pl ${x.w?(x.w==id?'w':'l'):''}" onclick="win(${ri},${mi},'${id}')">${av(id,30)}<span style="flex:1">${nm(id)}</span>${x.w==id?'✓':''}</button>`).join('')+(x.w&&ri==t.r.length-1&&!t.ch?`<button class="ghost sm" style="width:100%;border-radius:0" onclick="undo(${ri},${mi})">↺ Geri al</button>`:'')+`</div>`).join('')+`</div>`).join('')+`</div><button class=ghost style="width:100%;margin:8px 0 12px" onclick="closeT()">${t.ch?'Turnuvayı kapat':'Turnuvayı iptal et'}</button>`}
+h+=`<div class=card><h3>🎲 Hızlı kura</h3><div class=row><button onclick="pick()">Rastgele öğrenci</button><button class=ghost onclick="pairs()">Rastgele çiftler</button></div><div style="margin-top:10px;font-size:18px;line-height:1.8">${R}</div></div>`;
+if(S.hist.length)h+=`<div class=card><h3>📜 Turnuva geçmişi</h3>`+S.hist.map(x=>`<div class=li style="box-shadow:none;background:var(--c2)">${av(x.ch)}<div class=nm>${esc(x.n)}<br><small>${fd(x.d)} · şampiyon: ${nm(x.ch)}</small></div></div>`).join('')+`</div>`;return h};
+const tg=id=>{SEL=SEL.includes(id)?SEL.filter(x=>x!=id):[...SEL,id];draw()};
+const mk=ids=>{const o=[];for(let i=0;i<ids.length;i+=2){const b=ids[i+1]||null;o.push({a:ids[i],b,w:b?null:ids[i],auto:!b})}return o};
+function startT(){if(SEL.length<2)return alert('En az 2 katılımcı seçin');S.tn={nm:TNAME.trim()||'Turnuva',d:TDATE,r:[mk(shuf(SEL))],aw:AW,ch:null};save();draw()}
+function win(ri,mi,id){const t=S.tn,r=t.r[ri],x=r[mi];if(x.w||x.auto)return;x.w=id;if(t.aw)gs(id).p++;
+if(ri==t.r.length-1&&r.every(y=>y.w)){const ws=r.map(y=>y.w);if(ws.length==1){t.ch=ws[0];const s=gs(ws[0]);if(t.aw)s.p+=5;s.w.push({t:t.nm,d:t.d});S.hist.unshift({n:t.nm,d:t.d,ch:ws[0]})}else t.r.push(mk(ws))}save();draw()}
+function undo(ri,mi){const t=S.tn,x=t.r[ri][mi];if(t.aw)gs(x.w).p--;x.w=null;save();draw()}
+function closeT(){if(S.tn.ch||confirm('Turnuva iptal edilsin mi?')){S.tn=null;SEL=null;TNAME='';save();draw()}}
+function pick(){const p=pool();R=p.length?'🎯 <b>'+esc(shuf(p)[0].n)+'</b>':'Öğrenci yok';draw()}
+function pairs(){R=mk(shuf(pool()).map(s=>s.id)).map(x=>`${nm(x.a)} ⚔️ ${x.b?nm(x.b):'<small>bay</small>'}`).join('<br>');draw()}
+V.pua=()=>(S.st.length?'':empty('Önce öğrenci ekleyin.'))+rank().map((s,i)=>`<div class=li><span class=f0 style="width:26px;text-align:center;font-size:${i<3?22:15}px">${['🥇','🥈','🥉'][i]||i+1}</span>${av(s.id)}<div class=nm onclick="P='${s.id}';draw()">${esc(s.n)}<br><small>${s.a} ➕ ${s.w.length?' · 🏆'+s.w.length:''}</small></div><span class=badge style="font-size:16px">${s.p}</span><button class="ghost sm f0" onclick="pp('${s.id}',1)">+1</button><button class="g sm f0" onclick="pa('${s.id}')">➕</button></div>`).join('')+(S.st.length?`<button class=ghost style="width:100%" onclick="rp()">Tüm puanları sıfırla</button>`:'');
+const pp=(id,v)=>{gs(id).p+=v;save();draw()},pa=id=>{gs(id).a++;save();draw()};
+function pk(id){const v=prompt('Öğrenci notu');if(v&&v.trim()){gs(id).k.push({d:today(),t:v.trim()});save();draw()}}
+function dk(id,j){if(confirm('Bu not silinsin mi?')){gs(id).k.splice(j,1);save();draw()}}
+function rp(){if(confirm('Tüm puan ve artılar sıfırlansın mı?')){S.st.forEach(s=>{s.p=0;s.a=0});save();draw()}}
+V.not=()=>`<div class=card><textarea id=gn rows=3 placeholder="Ders notu, fikir, oyun planı..."></textarea><button style="width:100%" onclick="addN()">＋ Not ekle</button></div>`+[...S.notes].reverse().map(x=>`<div class=card><small>${fd(x.d)}</small><div style="white-space:pre-wrap;margin:4px 0 8px">${esc(x.t)}</div><button class="d sm" onclick="delN('${x.id}')">Sil</button></div>`).join('');
+const addN=()=>{if(gn.value.trim()){S.notes.push({id:uid(),d:today(),t:gn.value.trim()});save();draw()}},delN=id=>{if(confirm('Silinsin mi?')){S.notes=S.notes.filter(x=>x.id!=id);save();draw()}};
+let tm=0,ti=null;const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+V.arc=()=>`<div class=card><h3>⏱ Geri sayım</h3><div id=td style="text-align:center;font-size:58px;font-weight:800;color:var(--p)">${fmt(tm)}</div><div class=row><input id=mn type=number value=5 min=1 style="max-width:80px"><button onclick="tS()">Başlat</button><button class=ghost onclick="tX()">Durdur</button><button class=ghost onclick="tm=0;tX();draw()">Sıfırla</button></div></div><div class=card><h3>👥 Takım kur</h3><small>Kaç takım olsun?</small><input id=tk type=number value=2 min=2><button style="width:100%" onclick="teams()">Takımları oluştur</button><div style="margin-top:10px;line-height:1.8">${R}</div></div>`;
+function tX(){clearInterval(ti);ti=null}
+function tS(){if(ti)return;if(!tm)tm=Math.max(1,+mn.value||1)*60;ti=setInterval(()=>{tm--;const e=document.getElementById('td');if(e)e.textContent=tm>0?fmt(tm):'⏰ Süre doldu!';if(tm<=0){tX();tm=0;try{navigator.vibrate([500,200,500,200,500])}catch(x){}}},1000)}
+function teams(){const k=Math.max(2,+tk.value||2),g=Array.from({length:k},()=>[]);shuf(pool()).forEach((s,i)=>g[i%k].push(esc(s.n)));R=g.map((x,i)=>`<b>${i+1}. Takım:</b> ${x.join(', ')||'-'}`).join('<br>');draw()}
+V.ayr=()=>`<div class=card><h3>🎨 Tema</h3><div class=th>`+THEMES.map(t=>`<button class="${S.theme==t[0]?'on':''}" style="background:${t[2]}" onclick="S.theme='${t[0]}';save();draw()">${t[1]}${S.theme==t[0]?' ✓':''}</button>`).join('')+`</div></div><div class=card><h3>💾 Yedekleme</h3><small>Dosyayı Drive, WhatsApp veya Dosyalar'a kaydedin.</small><div class=row style="margin-top:8px"><button onclick="backup()">Yedekle</button><button class=ghost onclick="csv()">Excel çıktısı</button></div><h4>Geri yükle</h4><input type=file accept=".json,application/json" onchange="restore(this)"></div>`;
+async function saveF(f,j,mime){const C=window.Capacitor&&Capacitor.Plugins;
+if(C&&C.Filesystem&&C.Share){try{const r=await C.Filesystem.writeFile({path:f,data:j,directory:'CACHE',encoding:'utf8'});await C.Share.share({title:f,url:r.uri});return}catch(e){alert('Hata: '+(e.message||e))}}
+const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([j],{type:mime}));a.download=f;a.click()}
+const backup=()=>saveF('akilzeka-yedek-'+today()+'.json',JSON.stringify(S),'application/json');
+function csv(){const q=x=>'"'+String(x).replace(/"/g,'""')+'"';const rows=[['Ad','Puan','Artı','Katıldı','Devamsız','Kazandığı turnuvalar','Notlar'].map(q).join(';')].concat(S.st.map(s=>{const[p,a]=att(s.id);return [s.n,s.p,s.a,p,a,s.w.map(w=>w.t+' ('+fd(w.d)+')').join(' | '),s.k.map(k=>fd(k.d)+': '+k.t).join(' | ')].map(q).join(';')}));saveF('akilzeka-liste-'+today()+'.csv','\ufeff'+rows.join('\n'),'text/csv')}
+function restore(el){const f=el.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!Array.isArray(o.st))throw 0;if(confirm('Mevcut veriler yedekle değiştirilsin mi?')){S=o;S.hist=S.hist||[];S.notes=S.notes||[];S.att=S.att||{};S.theme=S.theme||'mor';S.st.forEach(s=>{s.w=s.w||[];s.k=s.k||[]});save();draw()}}catch(e){alert('Geçersiz yedek dosyası')}};r.readAsText(f)}
+draw();
+</script></body></html>
